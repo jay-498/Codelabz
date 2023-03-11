@@ -17,6 +17,7 @@ import { useFirebase } from "react-redux-firebase";
 import validator from "validator";
 import { clearAuthError, signUp } from "../../../store/actions";
 import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
 
 const SignupForm = () => {
   const [loading, setLoading] = useState(false);
@@ -303,6 +304,7 @@ const SignupForm = () => {
           }}
         />
         <FormControlLabel
+          style={{ fontSize: 16 }}
           control={
             <Checkbox
               checked={agreed}
@@ -313,7 +315,11 @@ const SignupForm = () => {
               style={{}}
             />
           }
-          label="By creating an account, you agree to our terms and conditions."
+          label={
+            <Typography sx={{ fontSize: 15 }}>
+              By creating an account, you agree to our terms and conditions.
+            </Typography>
+          }
         />
         {agreedText && !agreed ? (
           <div style={{ color: "red", padding: "5px" }}>

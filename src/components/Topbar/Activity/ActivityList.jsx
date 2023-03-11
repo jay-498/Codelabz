@@ -38,6 +38,7 @@ function ActivityList({ value, toggle, acitvitylist, classname }) {
           <Stack spacing={2} direction={"row"}>
             {acitvitylist.map((item, index) => (
               <Button
+                key={index}
                 variant="outlined"
                 color="primary"
                 className={`

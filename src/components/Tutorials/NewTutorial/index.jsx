@@ -11,7 +11,7 @@ import Divider from "@mui/material/Divider";
 import { IconButton } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import Avatar from "@mui/material/Avatar";
-import { makeStyles } from "@mui/styles";
+import { makeStyles, withTheme } from "@mui/styles";
 import { deepPurple } from "@mui/material/colors";
 import { Typography } from "@mui/material";
 import ImageIcon from "@mui/icons-material/Image";
@@ -205,7 +205,7 @@ const NewTutorial = ({ viewModal, onSidebarClick, viewCallback, active }) => {
             fullWidth
             data-testId="newTutorial_title"
             id="newTutorialTitle"
-            style={{ marginBottom: "2rem" }}
+            style={{ marginBottom: "1rem" }}
             onChange={e => handleChange(e)}
           />
 
@@ -221,7 +221,7 @@ const NewTutorial = ({ viewModal, onSidebarClick, viewCallback, active }) => {
             id="newTutorialSummary"
             data-testId="newTutorial_summary"
             onChange={e => handleChange(e)}
-            style={{ marginBottom: "2rem" }}
+            style={{ marginBottom: "1rem" }}
           />
 
           <IconButton>
@@ -239,7 +239,7 @@ const NewTutorial = ({ viewModal, onSidebarClick, viewCallback, active }) => {
               <Button
                 key="back"
                 onClick={onSidebarClick}
-                id="cancelAddTutorial"
+                // id="cancelAddTutorial"
               >
                 Cancel
               </Button>
@@ -252,7 +252,11 @@ const NewTutorial = ({ viewModal, onSidebarClick, viewCallback, active }) => {
                 loading={loading}
                 onClick={e => onSubmit(e)}
                 data-testid="newTutorialSubmit"
-                style={{ backgroundColor: "#03AAFA", borderRadius: "30px" }}
+                style={{
+                  color: "#fff",
+                  backgroundColor: "#03AAFA",
+                  borderRadius: "30px"
+                }}
                 disabled={
                   formValue.title === "" ||
                   formValue.summary === "" ||
